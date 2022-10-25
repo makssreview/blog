@@ -8,7 +8,7 @@ mongoose
     .connect('mongodb+srv://admin:admin123@cluster0.ttgwg1i.mongodb.net/?retryWrites=true&w=majority')
     .then(() => console.log('DB OK'))
     .catch((err) => console.log('DB ERROR', err));
-
+//dddd
 const app = express()
 const port = 8888
 app.use(cors())
