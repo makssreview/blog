@@ -1,6 +1,18 @@
 import * as mongoose from "mongoose";
 
-const UserSchema = new mongoose.Schema({
+interface MongoResult {
+    _doc: any
+}
+interface IEvent  extends MongoResult {
+    _id: any;
+    fullName: string;
+    email: string;
+    passwordHash: string;
+    avatarUrl: string;
+}
+
+
+const UserSchema = new mongoose.Schema<IEvent>({
     fullName:{
         type:String,
         required:true
@@ -20,4 +32,4 @@ const UserSchema = new mongoose.Schema({
     }
 )
 
-export default mongoose.model('User', UserSchema)
+export default mongoose.model ('User', UserSchema)
