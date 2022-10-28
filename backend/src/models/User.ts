@@ -4,11 +4,11 @@ interface MongoResult {
     _doc: any
 }
 interface IEvent  extends MongoResult {
-    _id: any;
-    fullName: string;
-    email: string;
-    passwordHash: string;
-    avatarUrl: string;
+    _id: any
+    fullName: string
+    email: string
+    passwordHash: string
+    avatarUrl: string
 }
 
 
