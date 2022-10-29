@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ac623f6b-74c3-44f2-bf38-212b2fb59e74" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/backend/src/controllers/authentication.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/helpers/functions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/helpers/functions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/models/User.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/models/User.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/helpers/functions.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/models/Post.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/models/PostModel.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/models/User.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/models/UserModel.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +51,7 @@
       <recent name="C:\Users\saibelm\Desktop\NewReact\newclone\blogclone\my-app\backend" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\saibelm\Desktop\NewReact\newclone\blogclone\backend\src\controllers" />
       <recent name="C:\Users\saibelm\Desktop\NewReact\newclone\blogclone\backend\src\types\express" />
       <recent name="C:\Users\saibelm\Desktop\NewReact\newclone\blogclone\backend" />
     </key>
