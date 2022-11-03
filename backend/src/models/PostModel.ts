@@ -4,7 +4,7 @@ interface IEvent {
     _id: any
     title: string
     text: string
-    imageUrl: string |undefined
+    imageUrl: string
     user: mongoose.Schema.Types.ObjectId
 }
 
@@ -17,7 +17,7 @@ const PostSchema = new mongoose.Schema<IEvent>({
             type: String,
             required: true,
         },
-    imageUrl: String,
+        imageUrl: String,
         user: {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'User',
