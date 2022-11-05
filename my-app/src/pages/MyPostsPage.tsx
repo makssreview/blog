@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import face from "../images/photo.png";
-import {BlogType} from "./BlogItem";
+import {BlogType} from "../components/BlogItem";
 import styled from "styled-components";
 import {Chip} from "@mui/material";
 import {Link} from "react-router-dom";

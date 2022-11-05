@@ -1,6 +1,6 @@
 import React from 'react'
 import { useParams, Link } from 'react-router-dom'
-import { BlogType } from '../pages/BlogItem'
+import { BlogType } from './BlogItem'
 import { useLocalStorage } from '../helpers/functions'
 import styled from 'styled-components'
 import cover from '../images/ddl.jpg'
@@ -27,12 +27,11 @@ export const ArticlePage = () => {
             <h1>{blog.title}</h1>
             <div>
               <CategoryWrapper>
-                {/*<Chip label={blog.category} />*/}
                 <DateWrapper>Published at {date()}</DateWrapper>
               </CategoryWrapper>
             </div>
           </Header>
-          <ImgWrapper src={blog.imageUrl} alt='cover' />
+          <ImgWrapper src={`http://localhost:3222${blog.imageUrl}`} alt='cover' />
           <TextWrapper>{blog.text}</TextWrapper>
         </BlogWrapper>
       )}

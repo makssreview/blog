@@ -1,26 +1,27 @@
-import React, {useRef, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {Button, Paper, TextField} from "@mui/material";
 import SimpleMdeReact from "react-simplemde-editor";
 import styled from "styled-components";
 import axios from "../axios";
-import {useNavigate} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 
 
 
 export const AddPostPage = () => {
-
-
     const [title, setTitle]= useState('')
     const [text, setText]= useState('')
-    const [value, setValue] =  useState('')
     const [imageUrl, setImageUrl]= useState('')
+
+    const {id}=useParams()
+    const isEditing = Boolean(id)
     const inputFileRef = useRef<any>(null)
     const navigate = useNavigate();
-    const handleChangeFile = async(event:any) => {
+
+    const uploadFileHandler = async(event:any) => {
         try{
             const formData = new FormData()
             const file = event.target.files[0]
-            formData.append('image', file)
+            formData.append('imageUrl', file)
             const {data} = await axios.post('/upload/', formData)
             setImageUrl(data.url)
             console.log(imageUrl)
@@ -29,31 +30,46 @@ export const AddPostPage = () => {
         }
     };
 
+    const removeFileHandler = () => {
+        setImageUrl('')
+    };
 
-    const onClickRemoveImage = () => {};
-
-    const fileds = {
-        title, text, imageUrl
-    }
     const onSubmit =async ()=>{
+        const fileds = {
+            title, text, imageUrl
+        }
         try {
-            const {data} = await axios.post('/posts', fileds)
-            const id = data._id
+            const {data} = isEditing
+                ? await axios.patch(`/posts/${id}`, fileds)
+                : await axios.post('/posts', fileds)
             navigate('/')
         } catch (err){
             console.warn(err)
         }
     }
 
+    useEffect(()=>{
+        if(id){
+            axios.get(`/posts/${id}`).then(({data})=>{
+                setTitle(data.title)
+                setText(data.text)
+                setImageUrl(data.imageUrl)
+            }).catch((err)=>{
+                alert('Error')
+            })
+        }
+    })
+
+
     return (
         <Wrapper style={{ padding: 30 }}>
             <Button onClick={()=>inputFileRef.current.click()} variant="outlined" size="large">
                 Upload preview
             </Button>
-            <input ref={inputFileRef} type="file" onChange={handleChangeFile} hidden />
+            <input ref={inputFileRef} type="file" onChange={uploadFileHandler} hidden />
             {imageUrl && (
                 <>
-                <Button variant="contained" color="error" onClick={onClickRemoveImage}>
+                <Button variant="contained" color="error" onClick={removeFileHandler}>
                     Delete
                 </Button>
                 <ImageWrapper src={`http://localhost:3222${imageUrl}`} alt="Uploaded" />
@@ -63,6 +79,7 @@ export const AddPostPage = () => {
             <br />
             <br />
             <TitleWrapper
+                value={title}
                 variant="standard"
                 placeholder="Title..."
                 onChange={e => {
@@ -70,6 +87,7 @@ export const AddPostPage = () => {
                 fullWidth
             />
             <TitleWrapper
+                value={text}
                 variant="standard"
                 placeholder="Text..."
                 onChange={e => {
@@ -78,7 +96,7 @@ export const AddPostPage = () => {
             />
             <div>
                 <Button onClick={onSubmit} size="large" variant="contained">
-                    Publish
+                    {isEditing? 'Edit' : 'Publish'}
                 </Button>
                 <a href="/">
                     <Button size="large">Back</Button>

@@ -1,12 +1,14 @@
 import {Request, Response} from "express";
 import PostSchema from "../models/PostModel";
+import UserSchema from "../models/UserModel";
+import {fileURLToPath} from "url";
 
 export const createPost = async (req: Request, res: Response) => {
     try {
         const doc = new PostSchema({
             title: req.body.title,
             text: req.body.text,
-            image: req.body.imageUrl,
+            imageUrl: req.body.imageUrl,
             user: req.user
         })
         const post = await doc.save()
@@ -75,7 +77,7 @@ export const updatePost = async (req: Request, res: Response) => {
             {
                 "title": req.body.title,
                 "text": req.body.text,
-                "image": req.body.imageUrl,
+                "imageUrl": req.body.imageUrl,
                 "user": req.user
             },
         )

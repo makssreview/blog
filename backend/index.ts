@@ -7,6 +7,7 @@ import {uploadRouter} from "./src/routes/UploadRoute";
 import swagger from './swagger.json'
 import swaggerUi from 'swagger-ui-express'
 
+
 const app = express()
 app.use(express.json())
 app.use('/upload', express.static('upload')) //catch GET request to static files

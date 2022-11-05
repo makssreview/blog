@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react';
-
 import './App.css';
 import {Route, Routes} from "react-router-dom";
 import {BlogHome} from "./pages/BlogHome";
@@ -8,6 +7,7 @@ import {AddPostPage} from "./pages/AddPostPage";
 import {Header} from "./components/Header";
 import {Login} from "./pages/Login";
 import {Registration} from "./pages/Registration";
+import axios from "./axios";
 
 
 
@@ -19,6 +19,7 @@ function App() {
                 <Routes>
                     <Route path='/' element={<BlogHome/>}/>
                     <Route path='/posts/:id' element={<ArticlePage/>}/>
+                    <Route path='/posts/:id/edit' element={<AddPostPage/>}/>
                     <Route path='/new' element={<AddPostPage/>}/>
                     <Route path='/login' element={<Login/>}/>
                     <Route path='/register' element={<Registration/>}/>

@@ -17,7 +17,7 @@ const PostSchema = new mongoose.Schema<IEvent>({
             type: String,
             required: true,
         },
-        imageUrl: String,
+        imageUrl: {type: String, default:''},
         user: {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'User',
