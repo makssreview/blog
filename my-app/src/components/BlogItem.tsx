@@ -1,60 +1,32 @@
-import React, {useEffect, useState} from 'react'
-import {Link, useParams} from 'react-router-dom'
+import React, {useContext} from 'react'
+import {Link} from 'react-router-dom'
 import {Chip, IconButton} from '@mui/material'
 import face from '../images/photo.png'
 import styled from 'styled-components'
-import {isEditable} from "@testing-library/user-event/dist/utils";
-import axios from "../axios";
+import {BlogPostType, PostContext} from "../pages/homePage/BlogHomeContext";
 
-export type BlogType = {
-    _id: string
-    title: string
-    text: string
-    createdAt: Date
-    user: any
-    imageUrl: string
-}
 
 export type PostType = {
-    post: BlogType
-    isEditable: boolean
+    post: BlogPostType
 }
 
 
 export const BlogItem = (props: PostType) => {
-    const {id}=useParams()
-    const [auth, setAuth] = useState<any>()
-    const getme = async () => {
-        const {data} = await axios.get('/auth/me')
-        setAuth(data)
-        return data
-    }
 
-    useEffect(() => {
-        getme()
-    })
-
-
-    const deleteHandler = async (id: string) => {
-        axios.delete(`/posts/${id}`)
-    }
+    const logic = useContext(PostContext)
     return (
         <Container>
             <ItemWrapper src={`http://localhost:3222${props.post.imageUrl}`} alt='cover'/>
             <H3Wrapper>{props.post.title}</H3Wrapper>
-            <H3Wrapper>{props.isEditable}</H3Wrapper>
             <H3Wrapper>{props.post.text}</H3Wrapper>
-            <H3Wrapper>{props.post.user['fullName']}</H3Wrapper>
+            <H3Wrapper>{props.post.user.fullName}</H3Wrapper>
             <FooterWrapper>
                 <DivAuthorWrapper>
                     <img src={face} alt='avatar' width={'30px'} height={'30px'}/>
-                    <div>
-                        {/*<p>{dates.toISOString().substring(0, 10)}</p>*/}
-                    </div>
                 </DivAuthorWrapper>
                 <div>
                 </div>
-                {auth?.userData?._id === props.post.user['_id'] && (
+                {logic.auth?.userData?._id === props.post.user._id && (
                     <div>
                         <a href={`/posts/${props.post._id}/edit`}>
                             <IconButton color="primary">
@@ -62,12 +34,13 @@ export const BlogItem = (props: PostType) => {
                             </IconButton>
                         </a>
                         <IconButton color="primary">
-                            <button onClick={() => deleteHandler(props.post._id)}>Delete</button>
+                            <button onClick={() => logic.deletePost(props.post._id)}>Delete</button>
                         </IconButton>
 
                     </div>
                 )}
-                <LinkWrapper to={`/posts/${props.post?._id}`}>Discover ➝</LinkWrapper>
+                <LinkWrapper to={`/posts/${props.post?._id}`} onClick={() => logic.showOnePost()}>Discover
+                    ➝</LinkWrapper>
 
             </FooterWrapper>
         </Container>

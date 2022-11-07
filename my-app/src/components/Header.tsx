@@ -1,22 +1,18 @@
-import React, {useEffect, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import styled from "styled-components";
-import {Link, useNavigate} from "react-router-dom";
+import {Link} from "react-router-dom";
 import Container from "@mui/material/Container";
 import {Button} from "@mui/material";
-import {useLocalStorage} from "../helpers/functions";
+import {LogoutContext} from "../pages/authentication/AuthContext";
 
 
 export const Header = () => {
-    const [token, setToken] = useState<any>('')
-    useEffect(()=>{
-        setToken(localStorage.getItem('token'))
-    },[])
+    const logic = useContext(LogoutContext)
 
-    const navigate = useNavigate();
-    const onClickHandler = () => {
-        localStorage.clear()
-        navigate("/")
-    }
+    useEffect(() => {
+        logic.setToken(localStorage.getItem('token'))
+    })
+
 
     return (
         <Wrapper>
@@ -24,16 +20,17 @@ export const Header = () => {
                 <WrapperDisplay>
                     <LogoWrapper><Link to={'/'}>Life is BLOG</Link></LogoWrapper>
                     <WrapperButtons>
-                        {token  &&
+                        {logic.token &&
 
                             <>
                                 <ButtonStyle variant="contained"><Link to={'/'}>My Posts </Link></ButtonStyle>
                                 <ButtonStyle variant="contained"><Link to={'/new'}>Make Post </Link></ButtonStyle>
                             </>
                         }
-                        {token
+                        { logic.token
                             ? <LogoutButton variant="contained" color="error"
-                                            onClick={onClickHandler}>Logout</LogoutButton>
+
+                                            onClick={()=>logic.userLogOut()}>Logout</LogoutButton>
                             : <ButtonStyle variant="contained"><Link to={'/login'}>Login </Link></ButtonStyle>}
                     </WrapperButtons>
                 </WrapperDisplay>
