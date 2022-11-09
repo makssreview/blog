@@ -1,7 +1,6 @@
 import React from 'react'
 import { useEffect, useState} from "react";
 import {genericHookContextBuilder} from "../../helpers/genericHookContextBuilder";
-import axios from "../../axios";
 import {ArticlePage} from "./ArticlePage";
 import {services} from "../../helpers/services";
 import {BlogHome} from "./BlogHome";

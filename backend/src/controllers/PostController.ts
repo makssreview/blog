@@ -1,7 +1,6 @@
 import {Request, Response} from "express";
 import PostSchema from "../models/PostModel";
-import UserSchema from "../models/UserModel";
-import {fileURLToPath} from "url";
+
 
 export const createPost = async (req: Request, res: Response) => {
     try {

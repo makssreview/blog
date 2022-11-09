@@ -14,12 +14,10 @@ return (
 
 
         <TextFieldWrapper label="Email"
-                          helperText={logic.errorLoginMessage}
                           onChange={(e)=>logic.setLoginForm({...logic.loginForm, email: e.currentTarget.value})}
                           fullWidth
         />
         <TextFieldWrapper label="Password"
-
                           onChange={(e)=>logic.setLoginForm({...logic.loginForm, password: e.currentTarget.value})}
                           fullWidth
         />
@@ -29,7 +27,7 @@ return (
                 fullWidth >
             Login
         </Button>
-        <TextWrapper>Don&apost have an account? <Link to={'/register'} >Register</Link></TextWrapper>
+        <TextWrapper>Don`t have an account? <LinkWrapper to={'/register'} >Register</LinkWrapper></TextWrapper>
         {logic.errorLoginMessage && <TypographyWrapper color={"red"} variant="h6">Wrong password or email</TypographyWrapper>}
     </PaperWrapper>
 );
@@ -50,12 +48,21 @@ const TextFieldWrapper = styled(TextField)`
   margin-bottom: 20px !important;
 `
 const TextWrapper =styled.div`
- margin-top: 5px; 
+ margin-top: 10px; 
   margin-bottom: 5px;
-  padding-left: 35px;
+  padding-left: 20px;
+  font-size: 20px;
 `
 
 const TypographyWrapper = styled(Typography)`
   padding-left: 30px;
-    
+  
+`
+const LinkWrapper = styled(Link)`
+  font-style: oblique;
+  font-size: 20px;
+  &:hover {
+    background-color: #039be5;
+    color: white;
+    cursor: pointer;
 `

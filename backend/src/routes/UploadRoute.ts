@@ -1,6 +1,4 @@
 import multer from "multer";
-import path from "path";
-import {v1} from "uuid";
 import {Request, Response} from "express";
 import {Router} from "express"
 const uploadRouter = Router()

@@ -2,6 +2,7 @@ import React, {useContext} from 'react'
 import styled from 'styled-components'
 import { BlogItem } from '../../components/BlogItem'
 import {PostContext} from "./BlogHomeContext";
+import {Search} from "../../components/Search";
 
 
 export const BlogHome = () => {
@@ -10,10 +11,9 @@ export const BlogHome = () => {
 
   return (
     <Container>
-      <HeaderWrapper>
-      </HeaderWrapper>
+        <Search/>
       <PostWrapper>
-        {logic.postsArray.map((post) => (
+        {logic.postsArray.reverse().map((post) => (
           <BlogItem post={post} key={post._id}
           />
         ))}
@@ -42,5 +42,6 @@ const PostWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   width: 100%;
-  padding: 0 50px;
+  padding: 10px 30px;
+  gap: 30px
 `

@@ -40,6 +40,10 @@ export const services = {
         userInfo: async ()=>{
             const response = await axios.get('/auth/me')
             return (await response)
+        },
+        getAllUsers: async ()=>{
+            const response = await axios.get('/auth/all-users')
+            return (await response.data)
         }
     }
 }

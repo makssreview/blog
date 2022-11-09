@@ -1,12 +1,12 @@
-import React, {useContext, useRef} from 'react';
+import React, {useCallback, useContext, useEffect, useRef, useState} from 'react';
 import {Button, Paper, TextField} from "@mui/material";
-import SimpleMdeReact from "react-simplemde-editor";
 import styled from "styled-components";
 import {NewPostContext} from "./NewPostContext";
+import "easymde/dist/easymde.min.css";
+import SimpleMdeReact from "react-simplemde-editor";
 
 
 export const AddPostPage = () => {
-
     const logic = useContext(NewPostContext)
     const inputFileRef = useRef<HTMLInputElement | null>(null)
 
@@ -36,20 +36,15 @@ export const AddPostPage = () => {
                 }}
                 fullWidth
             />
-            <TitleWrapper
+            <SimpleMdeReact
                 value={logic.text}
-                variant="standard"
-                placeholder="Text..."
-                onChange={e => {
-                    logic.setText(e.currentTarget.value)
-                }}
-                fullWidth
+                onChange={logic.setText}
             />
             <div>
                 <Button onClick={() => logic.addNewPost()} size="large" variant="contained">
                     Publish
                 </Button>
-                <a href="/my-app/src/pages">
+                <a href="/">
                     <Button size="large">Back</Button>
                 </a>
             </div>
@@ -57,26 +52,13 @@ export const AddPostPage = () => {
     );
 };
 
-const SimpleMDE = styled(SimpleMdeReact)`
-  margin: 30px -30px;
-
-  .cm-s-easymde {
-    border: 0;
-    font-size: 32px;
-  }
-
-  .editor-toolbar {
-    border: 0;
-    padding-left: 20px;
-    background-color: rgb(0 0 0 / 2%);
-  }
-`
 const ImageWrapper = styled.img`
-  width: 100%;
+  max-width: 600px;
+  max-height: 600px;
 `
 const TitleWrapper = styled(TextField)`
   input {
-    font-size: 42px;
+    font-size: 32px;
     font-weight: 900;
   }
 
