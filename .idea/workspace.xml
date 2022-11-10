@@ -3,22 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ac623f6b-74c3-44f2-bf38-212b2fb59e74" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/controllers/PostController.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/controllers/PostController.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/controllers/UserController.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/controllers/UserController.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/routes/UploadRoute.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/routes/UploadRoute.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/routes/UserRoute.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/routes/UserRoute.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/components/BlogItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/components/BlogItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/components/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/components/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/helpers/services.ts" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/helpers/services.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/pages/authentication/AuthContext.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/pages/authentication/AuthContext.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/pages/authentication/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/pages/authentication/Login.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/pages/authentication/Registration.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/pages/authentication/Registration.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/pages/homePage/BlogHome.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/pages/homePage/BlogHome.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/pages/homePage/BlogHomeContext.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/pages/homePage/BlogHomeContext.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/pages/newPostPage/AddPostPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/pages/newPostPage/AddPostPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/upload/Screenshot_2.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,8 +13,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -91,7 +76,7 @@
       <workItem from="1667683411061" duration="34032000" />
       <workItem from="1667818342130" duration="2528000" />
       <workItem from="1667824218197" duration="16307000" />
-      <workItem from="1667845171820" duration="40307000" />
+      <workItem from="1667845171820" duration="43595000" />
     </task>
     <servers />
   </component>
