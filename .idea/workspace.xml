@@ -2,24 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ac623f6b-74c3-44f2-bf38-212b2fb59e74" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/my-app/src/components/ArticleForm.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-app/src/components/ArticlePage.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-app/src/components/SearchBar.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-app/src/images/ddl.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-app/src/images/ee.avif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-app/src/images/photo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-app/src/pages/BlogHome.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-app/src/pages/BlogItem.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/helpers/validations.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/helpers/validations.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/models/PostModel.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/models/PostModel.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/upload/Screenshot_2.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,8 +13,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -48,28 +32,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/saibelm/Desktop/NewReact/newclone/blogclone/my-app/src",
-    "ts.external.directory.path": "C:\\Users\\saibelm\\Desktop\\NewReact\\newclone\\blogclone\\my-app\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/saibelm/Desktop/NewReact/newclone/blogclone/my-app&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\saibelm\\Desktop\\NewReact\\newclone\\blogclone\\my-app\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\saibelm\Desktop\NewReact\newclone\blogclone\my-app" />
+      <recent name="C:\Users\saibelm\Desktop\NewReact\newclone\blogclone\my-app\src\helpers" />
       <recent name="C:\Users\saibelm\Desktop\NewReact\newclone\blogclone\my-app\src" />
       <recent name="C:\Users\saibelm\Desktop\NewReact\newclone\blogclone\backend" />
       <recent name="C:\Users\saibelm\Desktop\NewReact\newclone\blogclone\my-app\backend" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\saibelm\Desktop\NewReact\newclone\blogclone\my-app\src\components" />
+      <recent name="C:\Users\saibelm\Desktop\NewReact\newclone\blogclone\my-app\src\images" />
+      <recent name="C:\Users\saibelm\Desktop\NewReact\newclone\blogclone\my-app\src\pages\homePage" />
       <recent name="C:\Users\saibelm\Desktop\NewReact\newclone\blogclone\my-app\src" />
-      <recent name="C:\Users\saibelm\Desktop\NewReact\newclone\blogclone\my-app\src\Blog\pages" />
-      <recent name="C:\Users\saibelm\Desktop\NewReact\newclone\blogclone\my-app\src\Blog\components" />
-      <recent name="C:\Users\saibelm\Desktop\NewReact\newclone\blogclone\backend\src\controllers" />
+      <recent name="C:\Users\saibelm\Desktop\NewReact\newclone\blogclone\my-app\src\pages\authentication" />
+      <recent name="C:\Users\saibelm\Desktop\NewReact\newclone\blogclone\my-app\src\pages\authentication\login" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -85,6 +72,11 @@
       <workItem from="1666709649125" duration="332000" />
       <workItem from="1666710154513" duration="1530000" />
       <workItem from="1667409340636" duration="38743000" />
+      <workItem from="1667563465844" duration="35967000" />
+      <workItem from="1667683411061" duration="34032000" />
+      <workItem from="1667818342130" duration="2528000" />
+      <workItem from="1667824218197" duration="16307000" />
+      <workItem from="1667845171820" duration="43595000" />
     </task>
     <servers />
   </component>

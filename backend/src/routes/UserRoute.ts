@@ -1,5 +1,5 @@
 import {loginValidation, registrationValidation} from "../helpers/validations";
-import {login, register, userInfo} from "../controllers/UserController";
+import { login, register, userInfo} from "../controllers/UserController";
 import {checkAuth} from "../controllers/authentication";
 
 import {Router} from "express"

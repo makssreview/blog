@@ -1,40 +1,42 @@
-import React, {useEffect, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import styled from "styled-components";
-import {Link, useNavigate} from "react-router-dom";
+import {Link} from "react-router-dom";
 import Container from "@mui/material/Container";
-import {Button} from "@mui/material";
-import {useLocalStorage} from "../helpers/functions";
-
+import {Button, createTheme, ThemeProvider} from "@mui/material";
+import {LogoutContext} from "../pages/authentication/AuthContext";
+import { blue, yellow } from '@mui/material/colors';
+import logo from '../images/logo.png'
 
 export const Header = () => {
-    const [token, setToken] = useState<any>('')
-    useEffect(()=>{
-        setToken(localStorage.getItem('token'))
-    },[])
 
-    const navigate = useNavigate();
-    const onClickHandler = () => {
-        localStorage.clear()
-        navigate("/")
-    }
+    const logic = useContext(LogoutContext)
+
+    useEffect(() => {
+        logic.setToken(localStorage.getItem('token'))
+    })
+
+
 
     return (
         <Wrapper>
             <Container maxWidth="lg">
                 <WrapperDisplay>
-                    <LogoWrapper><Link to={'/'}>Life is BLOG</Link></LogoWrapper>
+                    <a href="/">
+                    <img src={logo} />
+                    </a>
                     <WrapperButtons>
-                        {token  &&
+                        {logic.token &&
 
                             <>
-                                <ButtonStyle variant="contained"><Link to={'/'}>My Posts </Link></ButtonStyle>
-                                <ButtonStyle variant="contained"><Link to={'/new'}>Make Post </Link></ButtonStyle>
+                                <ButtonStyle color='primary' variant="outlined"><Link to={'/'}>My Posts </Link></ButtonStyle>
+                                <ButtonStyle variant="outlined"><Link to={'/new'}>Make Post </Link></ButtonStyle>
                             </>
                         }
-                        {token
-                            ? <LogoutButton variant="contained" color="error"
-                                            onClick={onClickHandler}>Logout</LogoutButton>
-                            : <ButtonStyle variant="contained"><Link to={'/login'}>Login </Link></ButtonStyle>}
+                        { logic.token
+                            ? <LogoutButton variant="outlined" color="error"
+
+                                            onClick={()=>logic.userLogOut()}>Logout</LogoutButton>
+                            : <ButtonStyle variant="outlined"><Link to={'/login'}>Login </Link></ButtonStyle>}
                     </WrapperButtons>
                 </WrapperDisplay>
             </Container>
@@ -44,15 +46,17 @@ export const Header = () => {
 
 const Wrapper = styled.div`
   background-color: #fff;
-  padding: 10px 0;
+  z-index: 1;
   border-bottom: 1px solid #e0e0e0;
-  margin-bottom: 30px;
+  position: sticky;
+  top: 0
 `
 const WrapperDisplay = styled.div`
   display: flex;
   justify-content: space-between;
 `
 const WrapperButtons = styled.div`
+    padding-top: 10px;
 `
 const ButtonStyle = styled(Button)`
   && {

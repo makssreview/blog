@@ -1,27 +1,30 @@
-import React, {useEffect, useState} from 'react';
-
+import React from 'react';
 import './App.css';
 import {Route, Routes} from "react-router-dom";
-import {BlogHome} from "./pages/BlogHome";
-import {ArticlePage} from "./components/ArticlePage";
-import {AddPostPage} from "./pages/AddPostPage";
-import {Header} from "./components/Header";
-import {Login} from "./pages/Login";
-import {Registration} from "./pages/Registration";
+import {AddPostPage} from "./pages/newPostPage/AddPostPage";
+import {ArticleUseContext, BlogUseContext} from "./pages/homePage/BlogHomeContext";
+import {AddPostUseContext} from "./pages/newPostPage/NewPostContext";
+
+import {AuthenticationUseContext, LoginUseContext, LogoutUseContext} from "./pages/authentication/AuthContext";
+
+
+
 
 
 
 function App() {
 
+
     return (
             <div>
-                <Header/>
+                <LogoutUseContext/>
                 <Routes>
-                    <Route path='/' element={<BlogHome/>}/>
-                    <Route path='/posts/:id' element={<ArticlePage/>}/>
-                    <Route path='/new' element={<AddPostPage/>}/>
-                    <Route path='/login' element={<Login/>}/>
-                    <Route path='/register' element={<Registration/>}/>
+                    <Route path='/' element={<BlogUseContext/>}/>
+                    <Route path='/posts/:id' element={<ArticleUseContext/>}/>
+                    <Route path='/posts/:id/edit' element={<AddPostPage/>}/>
+                    <Route path='/new' element={<AddPostUseContext/>}/>
+                    <Route path='/login' element={<LoginUseContext/>}/>
+                    <Route path='/register' element={<AuthenticationUseContext/>}/>
 
                 </Routes>
             </div>
