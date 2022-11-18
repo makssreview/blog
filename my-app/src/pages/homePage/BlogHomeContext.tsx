@@ -1,41 +1,44 @@
-import React from 'react'
-import { useEffect, useState} from "react";
-import {genericHookContextBuilder} from "../../helpers/genericHookContextBuilder";
-import {ArticlePage} from "./ArticlePage";
-import {services} from "../../helpers/services";
-import {BlogHome} from "./BlogHome";
-
+import React, {KeyboardEvent, useCallback} from 'react'
+import {useEffect, useState} from 'react'
+import {genericHookContextBuilder} from '../../helpers/genericHookContextBuilder'
+import {ArticlePage} from './ArticlePage'
+import {services} from '../../helpers/services'
+import {BlogHome} from './BlogHome'
+import axios from "../../axios";
+import {useParams} from "react-router-dom";
 
 export type BlogPostType = {
     _id: string
     title: string
+    tags: Array<string | null>
     text: string
     createdAt: Date
     user: UserType
     imageUrl: string
 }
-export type UserType ={
+export type UserType = {
     _id: string
-    email:string
-    fullName:string
-    passwordHash:string
-    createdAt:Date
-    updatedAt:Date
+    email: string
+    fullName: string
+    passwordHash: string
+    createdAt: Date
+    updatedAt: Date
 }
 
 const useLogicState = () => {
     const [auth, setAuth] = useState<any>()
     const [postsArray, setPostsArray] = useState([] as BlogPostType[])
-    const [error, setError] = useState(null as string | null)
-    const [showPost, setShowPost] =useState(false)
-
-
+    const [showPost, setShowPost] = useState(false)
+    const [searchTag, setSearchTag] = useState<string | null>('')
+    const [comment, setComment] = useState('')
+    const [commentArray, setCommentArray] = useState([])
+    const {id} = useParams()
     const getUserInfo = async () => {
-        try{
+        try {
             const {data} = await services.blog.userInfo()
             setAuth(data)
-        } catch (err){
-            setError (`Data is unavailable`)
+        } catch (err) {
+            alert(`Data is unavailable`)
         }
     }
 
@@ -43,32 +46,61 @@ const useLogicState = () => {
         try {
             setPostsArray(await services.blog.list())
         } catch (err) {
-            setError(`Data is unavailable`)
+            alert(`Data is unavailable`)
         }
     }
 
+    const searchPostsFilter = (e: KeyboardEvent<HTMLDivElement>) => {
+        if (e.key !== 'Enter') return
+        const value = (e.target as HTMLInputElement).value
+        if (value === '') {
+            return setSearchTag(null)
+        }
+        setSearchTag(value.toLowerCase())
+    }
 
     const deletePost = async (id: string) => {
         try {
             await services.blog.deletePost(id)
             setPostsArray(await services.blog.list())
-        } catch (error) {
-            alert('ddd')
+        } catch (err) {
+            alert(`Can't delete the post`)
         }
     }
 
-
-    const showOnePost =()=>{
+    const showOnePost = () => {
         setShowPost(true)
     }
 
-    useEffect(() => {
-        getUserInfo()
-    },[])
+    const createComment = async () => {
+        try {
+            const {data} = await services.blog.postComment({id, comment})
+            setComment('')
+        } catch (err) {
+            console.log(err)
+        }
+    }
+
+    const getComment = useCallback(async () => {
+        try {
+            if (id) {
+                setCommentArray(await services.blog.getComments(id))
+            }
+        } catch (err) {
+            console.log(err)
+        }
+    }, [setComment])
+
 
     useEffect(() => {
+        getComment()
+    }, [createComment])
+
+
+    useEffect(() => {
+        getUserInfo()
         getPosts()
-    })
+    }, [])
 
 
     return {
@@ -82,7 +114,16 @@ const useLogicState = () => {
         showOnePost,
         showPost,
         setShowPost,
-
+        searchTag,
+        setSearchTag,
+        searchPostsFilter,
+        commentArray,
+        setCommentArray,
+        comment,
+        setComment,
+        getComment,
+        createComment
+        , id
     }
 }
 
@@ -92,12 +133,14 @@ export const {ContextProvider: BlogContextProvider, Context: PostContext} =
 export const BlogUseContext = () => {
     return (
         <BlogContextProvider>
-           <BlogHome/>
+            <BlogHome/>
         </BlogContextProvider>
     )
 }
-export const {ContextProvider: ArticleContextProvider, Context: ArticleContext} =
-    genericHookContextBuilder(useLogicState)
+export const {
+    ContextProvider: ArticleContextProvider,
+    Context: ArticleContext
+} = genericHookContextBuilder(useLogicState)
 
 export const ArticleUseContext = () => {
     return (

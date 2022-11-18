@@ -1,61 +1,79 @@
-import React, {useContext} from 'react';
-import {Link} from "react-router-dom";
-import styled from "styled-components";
-import {Avatar, Button, Paper, TextField, Typography} from "@mui/material";
-import {AuthContext} from "./AuthContext";
+import React, {useContext} from 'react'
+import {Link} from 'react-router-dom'
+import styled from 'styled-components'
+import {Avatar, Button, Paper, TextField, Typography} from '@mui/material'
+import {AuthContext} from './AuthContext'
 
 export const Registration = () => {
-    const logic = useContext(AuthContext)
-    const onClickHandler =()=>{
-        logic.userRegister()
-        logic.inputCheck()
+    const {
+        userRegister,
+        inputCheck,
+        setRegisterForm,
+        registerForm,
+        errorRegisterMessage,
+        isEmailAlreadyRegistered
+    } = useContext(AuthContext)
+
+    const onClickHandler = () => {
+        userRegister()
+        inputCheck()
     }
 
     return (
         <PaperWrapper>
-            <TypographyWrapper variant="h5">
-                Account Registration
-            </TypographyWrapper>
-            <FormWrapper>
-                <Avatar sx={{width: 90, height: 90}}/>
-            </FormWrapper>
-            <TextFieldWrapper label="Full Name"
-                              onChange={(e) => logic.setRegisterForm({
-                                  ...logic.registerForm,
-                                  fullName: e.currentTarget.value
-                              })}
-                              fullWidth
+            <TypographyWrapper variant='h5'>Account Registration</TypographyWrapper>
+            <TextFieldWrapper
+                label='Full Name'
+                onChange={(e) =>
+                    setRegisterForm({
+                        ...registerForm,
+                        fullName: e.currentTarget.value
+                    })
+                }
+                fullWidth
             />
 
-            <TextFieldWrapper label="Email"
-                              // helperText={logic.errorRegisterMessage && 'Email should be example@email.com'}
-                              onChange={(e) => logic.setRegisterForm({
-                                  ...logic.registerForm,
-                                  email: e.currentTarget.value
-                              })}
-                              fullWidth
+            <TextFieldWrapper
+                label='Email'
+                // helperText={logic.errorRegisterMessage && 'Email should be example@email.com'}
+                onChange={(e) =>
+                    setRegisterForm({
+                        ...registerForm,
+                        email: e.currentTarget.value
+                    })
+                }
+                fullWidth
             />
-            <TextFieldWrapper label="Password"
-                              onChange={(e) => logic.setRegisterForm({
-                                  ...logic.registerForm,
-                                  password: e.currentTarget.value
-                              })}
-                              fullWidth
+            <TextFieldWrapper
+                label='Password'
+                onChange={(e) =>
+                    setRegisterForm({
+                        ...registerForm,
+                        password: e.currentTarget.value
+                    })
+                }
+                fullWidth
             />
-            <Button size="large"
-                    variant="contained"
-                    onClick={onClickHandler}
-                    fullWidth>
+            <Button
+                size='large'
+                variant='contained'
+                onClick={onClickHandler}
+                fullWidth
+            >
                 Register
             </Button>
-            <TextWrapper>Have already register? <LinkWrapper to={'/login'}>Login</LinkWrapper></TextWrapper>
-            {logic.errorRegisterMessage &&
-                <ErrorTextWrapper>{logic.errorRegisterMessage}</ErrorTextWrapper>}
-            {!logic.errorRegisterMessage && logic.isEmailAlreadyRegistered
-                    && <ErrorTextWrapper>Email is already registered</ErrorTextWrapper>}
+            <TextWrapper>
+                Have already register? <LinkWrapper to={'/login'}>Login</LinkWrapper>
+            </TextWrapper>
+            {errorRegisterMessage && (
+                <ErrorTextWrapper>{errorRegisterMessage}</ErrorTextWrapper>
+            )}
+            {!errorRegisterMessage && isEmailAlreadyRegistered && (
+                <ErrorTextWrapper>Email is already registered</ErrorTextWrapper>
+            )}
         </PaperWrapper>
-    );
-};
+    )
+}
 
 const PaperWrapper = styled(Paper)`
   width: 400px;
@@ -78,20 +96,23 @@ const TextWrapper = styled.div`
 `
 
 const TypographyWrapper = styled(Typography)`
+  color: #0f52ba;
   justify-content: center;
   align-items: center;
   padding-bottom: 15px;
   padding-left: 35px;
 `
 const LinkWrapper = styled(Link)`
+  color: #0f52ba;
   font-style: oblique;
   font-size: 20px;
+
   &:hover {
     background-color: #039be5;
     color: white;
     cursor: pointer;
 `
-const ErrorTextWrapper =styled.div`
+const ErrorTextWrapper = styled.div`
   font-size: 18px;
   color: red;
   font-weight: bolder;
