@@ -1,14 +1,16 @@
 import {Request, Response} from "express";
 import PostSchema from "../models/PostModel";
+import CommentSchema from "../models/CommentModel";
 
 
 export const createPost = async (req: Request, res: Response) => {
     try {
         const doc = new PostSchema({
             title: req.body.title,
+            tags: req.body.tags,
             text: req.body.text,
             imageUrl: req.body.imageUrl,
-            user: req.user
+            user: req.user,
         })
         const post = await doc.save()
         res.json(post)
@@ -32,8 +34,8 @@ export const getAllPosts = async (req: Request, res: Response) => {
 export const getOnePost = async (req: Request, res: Response) => {
     try {
         const postId = req.params.id
-
         const onePost = await PostSchema.findById({_id: postId})
+
         if (!onePost) {
             return res.status(404).json({
                 message: 'Post not found'
@@ -74,10 +76,11 @@ export const updatePost = async (req: Request, res: Response) => {
         const updatedPosts =  await PostSchema.updateOne(
             {_id: postId},
             {
-                "title": req.body.title,
-                "text": req.body.text,
-                "imageUrl": req.body.imageUrl,
-                "user": req.user
+                title: req.body.title,
+                tags: req.body.tags,
+                text: req.body.text,
+                imageUrl: req.body.imageUrl,
+                user: req.user,
             },
         )
         if (!updatedPosts) {
@@ -93,4 +96,16 @@ export const updatePost = async (req: Request, res: Response) => {
             message: `Couldn't update post`
         })
     }
+}
+export const  getPostComments = async (req: Request, res: Response) => {
+    try{
+        const postId = req.params.id
+        const post  = await PostSchema.findById({_id: postId})
+        const list = await Promise.all(
+            post?.comments.map((comment:object)=>{
+                return CommentSchema.findById(comment)
+            })
+        )
+        res.json(list)
+    } catch (err){}
 }

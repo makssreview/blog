@@ -1,46 +1,47 @@
 import React from 'react'
-import {useEffect, useState} from "react";
-import {genericHookContextBuilder} from "../../helpers/genericHookContextBuilder";
-import axios from "../../axios";
-import {useNavigate} from "react-router-dom";
-import {services} from "../../helpers/services";
-import {AddPostPage} from "./AddPostPage";
+import {useEffect, useState} from 'react'
+import {genericHookContextBuilder} from '../../helpers/genericHookContextBuilder'
+import axios from '../../axios'
+import {useNavigate, useParams} from 'react-router-dom'
+import {services} from '../../helpers/services'
+import {AddPostPage} from './AddPostPage'
+import {BlogPostType} from '../homePage/BlogHomeContext'
 
 
-export type BlogPostType = {
-    _id: string
-    title: string
-    text: string
-    createdAt: Date
-    user: any
-    imageUrl: string
-}
 
 const useLogicState = () => {
     const [auth, setAuth] = useState<any>()
     const [postsArray, setPostsArray] = useState([] as BlogPostType[])
     const [title, setTitle] = useState('')
+    const [tags, setTags] = useState<Array<string>>([])
     const [text, setText] = useState('')
     const [imageUrl, setImageUrl] = useState('')
     const [error, setError] = useState(null as string | null)
-    const navigate = useNavigate();
+    const navigate = useNavigate()
+    const {id} = useParams()
+    const isEditing = Boolean(id)
+    console.log(id)
 
     const getUserInfo = async () => {
-        try{
+        try {
             const {data} = await services.blog.userInfo()
             setAuth(data)
-        } catch (err){
-            setError (`Data is unavailable`)
+        } catch (err) {
+            setError(`Data is unavailable`)
         }
     }
 
     const addNewPost = async () => {
         const fields = {
-            title, text, imageUrl
+            title,
+            tags,
+            text,
+            imageUrl
         }
         try {
-            await services.blog.addPost(fields)
-            setPostsArray(await services.blog.list())
+            isEditing ?await services.blog.editPost({fields, id})
+                      : await services.blog.addPost(fields)
+
             navigate('/')
         } catch (err) {
             setError(`Data is unavailable`)
@@ -57,15 +58,14 @@ const useLogicState = () => {
         } catch (err) {
             console.warn(err)
         }
-    };
+    }
     const removeFileHandler = () => {
         setImageUrl('')
-    };
+    }
 
     useEffect(() => {
         getUserInfo()
     }, [])
-
 
     return {
         auth,
@@ -81,12 +81,17 @@ const useLogicState = () => {
         imageUrl,
         setImageUrl,
         uploadFileHandler,
-        removeFileHandler
+        removeFileHandler,
+        tags,
+        setTags,
+        isEditing,
     }
 }
 
-export const {ContextProvider: NewPostContextProvider, Context: NewPostContext} =
-    genericHookContextBuilder(useLogicState)
+export const {
+    ContextProvider: NewPostContextProvider,
+    Context: NewPostContext
+} = genericHookContextBuilder(useLogicState)
 
 export const AddPostUseContext = () => {
     return (

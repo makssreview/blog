@@ -13,5 +13,7 @@ export const loginValidation = [
 export const postValidation = [
     body('title', "Minimal title length 3 digits").isLength({min: 6}).isString(),
     body('text', "Minimal text length 6 digits").isLength({min: 6}).isString(),
+    body('tags', "Invalid input").isArray(),
+    body('imageUrl', "Invalid url ").isURL(),
 ]
 

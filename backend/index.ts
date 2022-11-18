@@ -6,6 +6,7 @@ import {userRouter} from "./src/routes/UserRoute";
 import {uploadRouter} from "./src/routes/UploadRoute";
 import swagger from './swagger.json'
 import swaggerUi from 'swagger-ui-express'
+import {commentRouter} from "./src/routes/CommentRote";
 
 
 const app = express()
@@ -24,6 +25,7 @@ mongoose
 app.use(userRouter)
 app.use(postRouter)
 app.use(uploadRouter)
+app.use(commentRouter)
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}!`)

@@ -1,19 +1,20 @@
 import React from 'react'
-import {useState} from "react";
-import {genericHookContextBuilder} from "../../helpers/genericHookContextBuilder";
-import {useNavigate} from "react-router-dom";
-import {Registration} from "./Registration";
-import {services} from "../../helpers/services";
-import {Login} from "./Login";
-import {Header} from "../../components/Header";
+import {useState} from 'react'
+import {genericHookContextBuilder} from '../../helpers/genericHookContextBuilder'
+import {useNavigate} from 'react-router-dom'
+import {Registration} from './Registration'
+import {services} from '../../helpers/services'
+import {Login} from './Login'
+import {Header} from '../../components/Header'
+
 type FormValues = {
-    email: string,
-    password: string,
-    fullName: string,
+    email: string
+    password: string
+    fullName: string
 }
 type LoginFormValues = {
-    email: string,
-    password: string,
+    email: string
+    password: string
 }
 const useLogicState = () => {
     const initialState = {
@@ -23,44 +24,47 @@ const useLogicState = () => {
     }
     const loginInitialState = {
         email: '',
-        password: '',
+        password: ''
     }
 
     const [registerForm, setRegisterForm] = useState<FormValues>(initialState)
-    const [errorRegisterMessage, setErrorRegisterMessage] = useState<string|null>(null)
+    const [errorRegisterMessage, setErrorRegisterMessage] = useState<string | null>(null)
     const [isEmailAlreadyRegistered, setIsEmailAlreadyRegistered] = useState(false)
-
     const [loginForm, setLoginForm] = useState<LoginFormValues>(loginInitialState)
     const [errorLoginMessage, setErrorLoginMessage] = useState(false)
     const [token, setToken] = useState<string | null>(null)
 
-    const navigate = useNavigate();
+    const navigate = useNavigate()
 
     const userRegister = async () => {
-            try {
-                await services.blog.register(registerForm)
-                setRegisterForm(initialState)
-                setErrorRegisterMessage(null)
-                setIsEmailAlreadyRegistered(false)
-                alert('Successfully registered' + "\n" + 'You will be redirected to the Login page')
-                navigate("/login")
-
-            } catch (err) {
-                setIsEmailAlreadyRegistered(true)
-            }
+        try {
+            await services.blog.register(registerForm)
+            setRegisterForm(initialState)
+            setErrorRegisterMessage(null)
+            setIsEmailAlreadyRegistered(false)
+            alert(
+                'Successfully registered' +
+                '\n' +
+                'You will be redirected to the Login page'
+            )
+            navigate('/login')
+        } catch (err) {
+            setIsEmailAlreadyRegistered(true)
+        }
     }
 
-    const inputCheck = ()=>{
-        function isValidEmail(email:string) {
-            return /\S+@\S+\.\S+/.test(email);
+    const inputCheck = () => {
+        function isValidEmail(email: string) {
+            return /\S+@\S+\.\S+/.test(email)
         }
-        if(!(registerForm.fullName.length >= 3)){
+
+        if (!(registerForm.fullName.length >= 3)) {
             setErrorRegisterMessage('Minimum name length is 3 characters')
         }
-        if(!isValidEmail(registerForm.email)){
+        if (!isValidEmail(registerForm.email)) {
             setErrorRegisterMessage('Email format is not valid')
         }
-        if(!(registerForm.password.length>=6)){
+        if (!(registerForm.password.length >= 6)) {
             setErrorRegisterMessage('Minimum password length is 6 digits')
         }
     }
@@ -70,10 +74,9 @@ const useLogicState = () => {
             const login = await services.blog.login(loginForm)
             localStorage.setItem('token', login.data.token)
             setToken(localStorage.getItem('token'))
-            setLoginForm({email: '', password: '',})
+            setLoginForm({email: '', password: ''})
             setErrorLoginMessage(false)
-            navigate("/")
-
+            navigate('/')
         } catch (err) {
             setErrorLoginMessage(true)
         }
@@ -100,7 +103,6 @@ const useLogicState = () => {
         isEmailAlreadyRegistered,
         setIsEmailAlreadyRegistered,
         inputCheck
-
     }
 }
 

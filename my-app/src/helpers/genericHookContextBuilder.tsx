@@ -1,19 +1,19 @@
 import React from 'react'
-import {createContext} from 'react'
+import { createContext } from 'react'
 
 type Props = {
-    children: React.ReactNode
+  children: React.ReactNode
 }
 
 export const genericHookContextBuilder = <T, P>(hook: () => T) => {
-    const Context = createContext<T>(undefined as never)
+  const Context = createContext<T>(undefined as never)
 
-    return {
-        Context,
-        ContextProvider: (props: Props & P) => {
-            const value = hook()
+  return {
+    Context,
+    ContextProvider: (props: Props & P) => {
+      const value = hook()
 
-            return <Context.Provider value={value}>{props.children}</Context.Provider>
-        },
+      return <Context.Provider value={value}>{props.children}</Context.Provider>
     }
+  }
 }
