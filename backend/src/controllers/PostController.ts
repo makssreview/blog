@@ -73,7 +73,7 @@ export const updatePost = async (req: Request, res: Response) => {
     try {
         const postId = req.params.id
 
-        const updatedPosts =  await PostSchema.updateOne(
+        const updatedPosts = await PostSchema.updateOne(
             {_id: postId},
             {
                 title: req.body.title,
@@ -89,7 +89,7 @@ export const updatePost = async (req: Request, res: Response) => {
             })
         }
         res.json({
-            success:true
+            success: true
         })
     } catch (err) {
         res.status(500).json({
@@ -97,15 +97,16 @@ export const updatePost = async (req: Request, res: Response) => {
         })
     }
 }
-export const  getPostComments = async (req: Request, res: Response) => {
-    try{
+export const getPostComments = async (req: Request, res: Response) => {
+    try {
         const postId = req.params.id
-        const post  = await PostSchema.findById({_id: postId})
+        const post = await PostSchema.findById({_id: postId})
         const list = await Promise.all(
-            post?.comments.map((comment:object)=>{
+            post?.comments.map((comment: object) => {
                 return CommentSchema.findById(comment)
             })
         )
         res.json(list)
-    } catch (err){}
+    } catch (err) {
+    }
 }

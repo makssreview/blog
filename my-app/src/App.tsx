@@ -1,18 +1,17 @@
 import React from 'react'
 import './App.css'
 import { Route, Routes } from 'react-router-dom'
-import { AddPostPage } from './pages/newPostPage/AddPostPage'
 import {
   ArticleUseContext,
   BlogUseContext
-} from './pages/homePage/BlogHomeContext'
-import { AddPostUseContext } from './pages/newPostPage/NewPostContext'
+} from './pages/homePage/Context'
+import { AddPostUseContext } from './pages/newPostPage/Context'
 
 import {
   AuthenticationUseContext,
   LoginUseContext,
   LogoutUseContext
-} from './pages/authentication/AuthContext'
+} from './pages/authentication/Context'
 
 function App() {
   return (

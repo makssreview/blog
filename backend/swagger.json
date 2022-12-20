@@ -129,7 +129,7 @@
         }
       }
     },
-    "/post": {
+    "/posts": {
       "get": {
         "summary": "Get all posts",
         "operationId": "getPosts",
@@ -195,7 +195,7 @@
         }
       }
     },
-    "/post/{id}": {
+    "/posts/{id}": {
       "get": {
         "summary": "Get post by id",
         "operationId": "getPostId",
@@ -406,8 +406,7 @@
       "Post": {
         "required": [
           "title",
-          "text",
-          "id"
+          "text"
         ],
         "type": "object",
         "properties": {
@@ -419,11 +418,15 @@
             "type": "string",
             "example": "Hakuna Matata!"
           },
+          "tags": {
+            "type": "array",
+            "example": ["Smile","Work"]
+          },
           "text": {
             "type": "string",
             "example": "What a wonderful phrase..."
           },
-          "photoUrls": {
+          "imageUrl": {
             "type": "string"
           }
         },

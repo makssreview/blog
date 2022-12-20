@@ -150,9 +150,9 @@ export function UsersApi(config) {
 export function PostsApi(config) {
     this.config = config || new Configuration();
 
-    this.postGet = (options = {}) => { 
+    this.postsGet = (options = {}) => { 
         const {fetchMethod, basePath, headers, getHeaders, responseHandler, errorHandler} = this.config;
-        let url = '/post';
+        let url = '/posts';
         const params = new URLSearchParams();
         setAdditionalParams(params, options.params);
         const query = params.toString();
@@ -182,9 +182,9 @@ export function PostsApi(config) {
         return promise;
     };
 
-    this.postPost = (body, options = {}) => { 
+    this.postsPost = (body, options = {}) => { 
         const {fetchMethod, basePath, headers, getHeaders, responseHandler, errorHandler} = this.config;
-        let url = '/post';
+        let url = '/posts';
         const params = new URLSearchParams();
         setAdditionalParams(params, options.params);
         const query = params.toString();
@@ -215,10 +215,10 @@ export function PostsApi(config) {
         return promise;
     };
 
-    this.postIdGet = (args, options = {}) => { 
+    this.postsIdGet = (args, options = {}) => { 
         const { id } = args;
         const {fetchMethod, basePath, headers, getHeaders, responseHandler, errorHandler} = this.config;
-        let url = '/post/{id}';
+        let url = '/posts/{id}';
         url = url.split(['{', '}'].join('id')).join(encodeURIComponent(String(id)));
         const params = new URLSearchParams();
         setAdditionalParams(params, options.params);
@@ -249,10 +249,10 @@ export function PostsApi(config) {
         return promise;
     };
 
-    this.postIdPut = (args, body, options = {}) => { 
+    this.postsIdPut = (args, body, options = {}) => { 
         const { id } = args;
         const {fetchMethod, basePath, headers, getHeaders, responseHandler, errorHandler} = this.config;
-        let url = '/post/{id}';
+        let url = '/posts/{id}';
         url = url.split(['{', '}'].join('id')).join(encodeURIComponent(String(id)));
         const params = new URLSearchParams();
         setAdditionalParams(params, options.params);
@@ -284,10 +284,10 @@ export function PostsApi(config) {
         return promise;
     };
 
-    this.postIdDelete = (args, options = {}) => { 
+    this.postsIdDelete = (args, options = {}) => { 
         const { id } = args;
         const {fetchMethod, basePath, headers, getHeaders, responseHandler, errorHandler} = this.config;
-        let url = '/post/{id}';
+        let url = '/posts/{id}';
         url = url.split(['{', '}'].join('id')).join(encodeURIComponent(String(id)));
         const params = new URLSearchParams();
         setAdditionalParams(params, options.params);

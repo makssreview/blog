@@ -2,56 +2,36 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ac623f6b-74c3-44f2-bf38-212b2fb59e74" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/my-app/src/components/BlogItem/BlogItem.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-app/src/components/CommentItem/CommentItem.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/controllers/CommentController.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/controllers/CommentController.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/controllers/PostController.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/controllers/PostController.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/helpers/validations.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/helpers/validations.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/models/PostModel.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/models/PostModel.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/routes/PostRoute.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/routes/PostRoute.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/upload/34db0e90-5c6f-11ed-afe3-391973398e3f-55f3dd1cb4e139f (1).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/upload/55f3dd1cb4e139f (1).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/upload/7ea390c0-5c6e-11ed-afe3-391973398e3f-amazon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/upload/Kanada-salmon-glacier.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/cover/Kanada-salmon-glacier.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/upload/Olx.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/upload/acb1d5524ea24beab86598a85adc5a48.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/upload/amazon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/upload/b1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/upload/b2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/upload/b3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/upload/c5e2a3a0-5b96-11ed-96db-5fb75af02b4d-55f3dd1cb4e139f (1).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/upload/cccd1dd0-5b96-11ed-96db-5fb75af02b4d-55f3dd1cb4e139f (1).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/upload/count.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/upload/d64cbca0-56c6-11ed-a72d-e72ea31146f1-Olx.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/upload/d6727440-5b80-11ed-86ad-2114b0989fc8-Amazon-Logo.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/upload/e35a1a4684194a14be50b2655069a524.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/upload/e86ed8f0-5b85-11ed-86ad-2114b0989fc8-55f3dd1cb4e139f (1).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/upload/f44ee7e0-5b95-11ed-96db-5fb75af02b4d-b1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/upload/traveling.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/generated.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/swagger.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/swagger.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my-app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my-app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/.eslintrc.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/.prettierrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/.prettierrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/App.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/App.test.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my-app/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/axios.ts" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/axios.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/components/BlogItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/components/BlogItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/components/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/components/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/components/Search.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/components/Search.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/helpers/genericHookContextBuilder.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/helpers/genericHookContextBuilder.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/components/BlogItem.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/components/CommentItem.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/components/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/components/Header/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/components/Search.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/components/Search/Search.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/helpers/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/helpers/api.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my-app/src/helpers/services.ts" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/helpers/services.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/pages/authentication/AuthContext.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/pages/authentication/AuthContext.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/pages/authentication/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/pages/authentication/Login.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/pages/authentication/Registration.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/pages/authentication/Registration.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/pages/homePage/ArticlePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/pages/homePage/ArticlePage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/pages/homePage/BlogHome.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/pages/homePage/BlogHome.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/pages/homePage/BlogHomeContext.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/pages/homePage/BlogHomeContext.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/images/ee.avif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/images/n.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/images/pexels-leah-kelley-3935702.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/pages/authentication/AuthContext.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/pages/authentication/Context.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/pages/authentication/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/pages/authentication/Login/Login.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/pages/authentication/Registration.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/pages/authentication/Registration/Registration.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/pages/homePage/ArticlePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/pages/homePage/ArticlePage/ArticlePage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/pages/homePage/BlogHome.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/pages/homePage/BlogeHome/BlogHome.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/pages/homePage/BlogHomeContext.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/pages/homePage/Context.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my-app/src/pages/newPostPage/AddPostPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/pages/newPostPage/AddPostPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/pages/newPostPage/NewPostContext.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/pages/newPostPage/NewPostContext.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/reportWebVitals.ts" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/reportWebVitals.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/setupTests.ts" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/setupTests.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/pages/newPostPage/NewPostContext.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/pages/newPostPage/Context.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/swagger/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/swagger/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/tailwind.config.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,8 +41,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -103,11 +83,11 @@
       <recent name="C:\Users\saibelm\Desktop\NewReact\newclone\blogclone\backend" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\saibelm\Desktop\NewReact\newclone\blogclone\my-app" />
-      <recent name="C:\Users\saibelm\Desktop\NewReact\newclone\blogclone\backend\src\cover" />
-      <recent name="C:\Users\saibelm\Desktop\NewReact\newclone\blogclone\my-app\src\images" />
-      <recent name="C:\Users\saibelm\Desktop\NewReact\newclone\blogclone\my-app\src\pages\homePage" />
-      <recent name="C:\Users\saibelm\Desktop\NewReact\newclone\blogclone\my-app\src" />
+      <recent name="C:\Users\saibelm\Desktop\NewReact\newclone\blogclone\my-app\src\components\Search" />
+      <recent name="C:\Users\saibelm\Desktop\NewReact\newclone\blogclone\my-app\src\components\Header" />
+      <recent name="C:\Users\saibelm\Desktop\NewReact\newclone\blogclone\my-app\src\components\CommentItem" />
+      <recent name="C:\Users\saibelm\Desktop\NewReact\newclone\blogclone\my-app\src\components\BlogItem" />
+      <recent name="C:\Users\saibelm\Desktop\NewReact\newclone\blogclone\my-app\src\pages\authentication\Registration" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -134,7 +114,19 @@
       <workItem from="1668248890090" duration="26117000" />
       <workItem from="1668368533065" duration="3994000" />
       <workItem from="1668429991166" duration="434000" />
-      <workItem from="1668430455589" duration="73756000" />
+      <workItem from="1668430455589" duration="78276000" />
+      <workItem from="1668869218133" duration="7344000" />
+      <workItem from="1669048713815" duration="1574000" />
+      <workItem from="1669133793227" duration="8142000" />
+      <workItem from="1669388826163" duration="7213000" />
+      <workItem from="1669544689392" duration="16611000" />
+      <workItem from="1669642834163" duration="617000" />
+      <workItem from="1669663345858" duration="21530000" />
+      <workItem from="1669912321998" duration="5514000" />
+      <workItem from="1670268347501" duration="2952000" />
+      <workItem from="1670489026075" duration="1882000" />
+      <workItem from="1670842445340" duration="7539000" />
+      <workItem from="1671550751047" duration="4251000" />
     </task>
     <servers />
   </component>
@@ -151,18 +143,6 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/my-app/src/pages/homePage/BlogHomeContext.tsx</url>
-          <line>28</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

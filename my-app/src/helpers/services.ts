@@ -1,6 +1,6 @@
 import axios from '../axios'
-import { BlogPostType } from '../pages/homePage/BlogHomeContext'
-
+import { BlogPostType } from '../pages/homePage/Context'
+import {api} from "./api";
 
 type InputType = {
   title: string
@@ -28,12 +28,18 @@ type CommentType = {
 export const services = {
   blog: {
     list: async () => {
-      const response = axios.get('/posts').then((res) => res.data)
-      return (await response)
+      const postsApi = api()
+      const response = postsApi.postsGet().then((res)=>res)
+      return (await response) ?? []
+      // const response = axios.get('/posts').then((res) => res.data)
+      // return (await response)
     },
     addPost: async (post: InputType) => {
-      const response = axios.post('/posts', post)
-      return (await response) as unknown as BlogPostType
+      const postsApi = api()
+      const response = postsApi.postsPost(post)
+      return (await response) ?? []
+      // const response = axios.post('/posts', post)
+      // return (await response) as unknown as BlogPostType
     },
     editPost: async (post: EditType) => {
       const response = axios.patch(`/posts/${post.id}`, post.fields)

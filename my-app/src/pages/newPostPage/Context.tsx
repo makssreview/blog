@@ -5,7 +5,7 @@ import axios from '../../axios'
 import {useNavigate, useParams} from 'react-router-dom'
 import {services} from '../../helpers/services'
 import {AddPostPage} from './AddPostPage'
-import {BlogPostType} from '../homePage/BlogHomeContext'
+import {BlogPostType} from '../homePage/Context'
 
 
 
@@ -20,7 +20,7 @@ const useLogicState = () => {
     const navigate = useNavigate()
     const {id} = useParams()
     const isEditing = Boolean(id)
-    console.log(id)
+
 
     const getUserInfo = async () => {
         try {

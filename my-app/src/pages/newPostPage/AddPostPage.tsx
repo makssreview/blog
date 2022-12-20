@@ -1,11 +1,12 @@
 import React, {useContext, useRef, KeyboardEvent, useState, useEffect} from 'react'
 import {Button, Paper} from '@mui/material'
 import styled from 'styled-components'
-import {NewPostContext} from './NewPostContext'
+import {NewPostContext} from './Context'
 import 'easymde/dist/easymde.min.css'
 import SimpleMdeReact from 'react-simplemde-editor'
 import {useParams} from 'react-router-dom'
 import axios from "../../axios";
+import {Wrapper, ImageWrapper, ItemWrapper, TagsWrapper, TitleWrapper, CloseWrapper} from './AddPostPage.style'
 
 
 export const AddPostPage = () => {
@@ -73,9 +74,6 @@ export const AddPostPage = () => {
                     />
                 </>
             )}
-
-            <br/>
-            <br/>
             <TitleWrapper
                 value={title}
                 placeholder='Title'
@@ -118,47 +116,4 @@ export const AddPostPage = () => {
     )
 }
 
-const ImageWrapper = styled.img`
-  max-width: 600px;
-  max-height: 600px;
-`
-const TitleWrapper = styled.input`
-  width: 100%;
-  height: 30px;
-  border: none;
-  outline: none;
-`
-const Wrapper = styled(Paper)`
-  padding: 30px 30px 20px 30px;
-  margin-top: 30px;
-  margin-left: 50px;
-  margin-right: 50px;;
-`
-const TagsWrapper = styled.div`
-  margin-top: 10px;
-  margin-bottom: 10px;
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 10px;
-`
-const ItemWrapper = styled.div`
-  background-color: rgba(0, 0, 0, 0.09);
-  display: inline-block;
-  padding: 5px 15px;
-  border-radius: 20px;
-`
-const CloseWrapper = styled.div`
-  cursor: pointer;
-  height: 20px;
-  width: 20px;
-  background-color: darkslategray;
-  color: whitesmoke;
-  border-radius: 50%;
-  text-align: center;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  margin-left: 5px;
-  font-size: 18px;
-`
+

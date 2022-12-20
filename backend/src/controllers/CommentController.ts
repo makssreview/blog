@@ -3,12 +3,12 @@ import CommentSchema from "../models/CommentModel";
 import PostSchema from "../models/PostModel";
 
 
-export const createComment  = async (req: Request, res: Response) => {
-    try{
+export const createComment = async (req: Request, res: Response) => {
+    try {
 
-      const {id, comment} = req.body
-        if(!comment){
-            res.json({message:'Comment should not be empty'})
+        const {id, comment} = req.body
+        if (!comment) {
+            res.json({message: 'Comment should not be empty'})
         }
         const doc = new CommentSchema({
             comment,
@@ -16,13 +16,13 @@ export const createComment  = async (req: Request, res: Response) => {
 
         })
         const newComment = await doc.save()
-        try{
-            await PostSchema.findByIdAndUpdate(id, {$push:{comments:newComment._id}})
-        }catch (err){
+        try {
+            await PostSchema.findByIdAndUpdate(id, {$push: {comments: newComment._id}})
+        } catch (err) {
             console.log(err)
         }
         res.json(newComment)
-    }catch (err){
-        res.json({message:'Error'})
+    } catch (err) {
+        res.json({message: 'Error'})
     }
 }

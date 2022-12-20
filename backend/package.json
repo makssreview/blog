@@ -5,8 +5,15 @@
   "main": "index.js",
   "scripts": {
     "dev": "tsnd --respawn index.ts",
+    "format": "prettier --config .prettierrc --write \"src/**/*.ts?(x)\"",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "api": "rm -rf gen/api && openapi-generator generate -i   http://petstore.swagger.io/v2/swagger.json --generator-name typescript-axios -o gen/api --config api.json && cd gen/api && npm install && npm run build"
+    "api": "rm -rf gen/api && openapi-generator generate -i   http://petstore.swagger.io/v2/swagger.json --generator-name typescript-axios -o gen/api --config api.json && cd gen/api && npm install && npm run build",
+    "eslintConfig": {
+      "extends": [
+        "react-app",
+        "react-app/jest"
+      ]
+    }
   },
   "keywords": [],
   "author": "",
@@ -43,6 +50,15 @@
     "@types/node": "^18.11.7",
     "@types/uuid": "^8.3.4",
     "ts-node-dev": "^2.0.0",
-    "typescript": "^4.8.4"
+    "typescript": "^4.8.4",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "2.7.1",
+    "@typescript-eslint/eslint-plugin": "^5.40.0",
+    "@typescript-eslint/parser": "^5.40.0",
+    "eslint": "^8.27.0",
+    "eslint-import-resolver-typescript": "^3.5.1",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-react": "^7.31.10"
   }
 }

@@ -1,10 +1,9 @@
 import React, {KeyboardEvent, useCallback} from 'react'
 import {useEffect, useState} from 'react'
 import {genericHookContextBuilder} from '../../helpers/genericHookContextBuilder'
-import {ArticlePage} from './ArticlePage'
+import {ArticlePage} from './ArticlePage/ArticlePage'
 import {services} from '../../helpers/services'
-import {BlogHome} from './BlogHome'
-import axios from "../../axios";
+import {BlogHome} from './BlogeHome/BlogHome'
 import {useParams} from "react-router-dom";
 
 export type BlogPostType = {
@@ -38,7 +37,7 @@ const useLogicState = () => {
             const {data} = await services.blog.userInfo()
             setAuth(data)
         } catch (err) {
-            alert(`Data is unavailable`)
+            console.log(err)
         }
     }
 
@@ -46,7 +45,7 @@ const useLogicState = () => {
         try {
             setPostsArray(await services.blog.list())
         } catch (err) {
-            alert(`Data is unavailable`)
+            console.log(err)
         }
     }
 
@@ -58,6 +57,7 @@ const useLogicState = () => {
         }
         setSearchTag(value.toLowerCase())
     }
+
 
     const deletePost = async (id: string) => {
         try {

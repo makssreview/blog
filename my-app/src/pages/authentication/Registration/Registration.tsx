@@ -1,9 +1,7 @@
 import React, {useContext} from 'react'
-import {Link} from 'react-router-dom'
-import styled from 'styled-components'
-import {Avatar, Button, Paper, TextField, Typography} from '@mui/material'
-import {AuthContext} from './AuthContext'
-
+import {Button} from '@mui/material'
+import {AuthContext} from '../Context'
+import {ErrorTextWrapper, PaperWrapper, TextWrapper, TypographyWrapper, TextFieldWrapper, LinkWrapper} from './Registration.style'
 export const Registration = () => {
     const {
         userRegister,
@@ -75,46 +73,3 @@ export const Registration = () => {
     )
 }
 
-const PaperWrapper = styled(Paper)`
-  width: 400px;
-  padding: 50px;
-  border: 1px solid #dedede;
-  margin: 50px auto;
-`
-const FormWrapper = styled.form`
-  display: flex;
-  justify-content: center;
-  margin-bottom: 30px;
-`
-const TextFieldWrapper = styled(TextField)`
-  margin-bottom: 20px !important;
-`
-const TextWrapper = styled.div`
-  margin-top: 10px;
-  margin-bottom: 5px;
-  font-size: 20px;
-`
-
-const TypographyWrapper = styled(Typography)`
-  color: #0f52ba;
-  justify-content: center;
-  align-items: center;
-  padding-bottom: 15px;
-  padding-left: 35px;
-`
-const LinkWrapper = styled(Link)`
-  color: #0f52ba;
-  font-style: oblique;
-  font-size: 20px;
-
-  &:hover {
-    background-color: #039be5;
-    color: white;
-    cursor: pointer;
-`
-const ErrorTextWrapper = styled.div`
-  font-size: 18px;
-  color: red;
-  font-weight: bolder;
-  opacity: 0.8;
-`

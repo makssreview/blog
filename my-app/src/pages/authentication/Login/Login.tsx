@@ -1,8 +1,7 @@
 import React, {useContext} from 'react'
-import styled from 'styled-components'
-import {Link} from 'react-router-dom'
 import {Button, Paper, TextField, Typography} from '@mui/material'
-import {LoginContext} from './AuthContext'
+import {LoginContext} from '../Context'
+import {LinkWrapper, TextWrapper, TypographyWrapper, PaperWrapper, TextFieldWrapper} from "./Login.style";
 
 export const Login = () => {
     const {setLoginForm, loginForm, userLogin,errorLoginMessage} = useContext(LoginContext)
@@ -50,32 +49,3 @@ export const Login = () => {
     )
 }
 
-const PaperWrapper = styled(Paper)`
-  width: 400px;
-  padding: 50px;
-  border: 1px solid #dedede;
-  margin: 50px auto;
-`
-const TextFieldWrapper = styled(TextField)`
-  margin-bottom: 20px !important;
-`
-const TextWrapper = styled.div`
-  margin-top: 10px;
-  margin-bottom: 5px;
-  padding-left: 20px;
-  font-size: 20px;
-`
-
-const TypographyWrapper = styled(Typography)`
-  padding-left: 30px;
-`
-const LinkWrapper = styled(Link)`
-  font-style: oblique;
-  color: #0f52ba;
-  font-size: 20px;
-
-  &:hover {
-    background-color: #039be5;
-    color: white;
-    cursor: pointer;
-`

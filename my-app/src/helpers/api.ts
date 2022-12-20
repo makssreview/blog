@@ -1,25 +1,27 @@
 import axios from '../axios'
 import { Configuration, PostsApi } from '../swagger'
 import { useContext, useMemo } from 'react'
-import {LoginContext, LogoutContext} from '../pages/authentication/AuthContext'
+import {LoginContext, LogoutContext} from '../pages/authentication/Context'
 
 export function createConfiguration(authToken?: string) {
   return new Configuration({
-    basePath: axios,
+    basePath: 'http://localhost:3222',
     accessToken: authToken
   })
 }
-export const AddPostPage = () => {
-  const { token } = useContext(LoginContext)
-  const config = useMemo(() => createConfiguration(token ?? undefined), [token])
-  const postsApi = useMemo(() => new PostsApi(config), [config])
+export const api = () => {
+  // const { token } = useContext(LoginContext)
+  const config = createConfiguration(undefined)
+  const postsApi = new PostsApi(config)
+  return postsApi}
 
-   postsApi
-    .postGet()
-    .then((res) => {
-      console.log(res.data)
-    })
-    .catch((err) => {
-      console.log(err)
-    })
-}
+
+   // postsApi
+   //  .postGet()
+   //  .then((res) => {
+   //    console.log(res.data)
+   //  })
+   //  .catch((err) => {
+   //    console.log(err)
+   //  })
+

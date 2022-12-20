@@ -2,10 +2,10 @@ import React from 'react'
 import {useState} from 'react'
 import {genericHookContextBuilder} from '../../helpers/genericHookContextBuilder'
 import {useNavigate} from 'react-router-dom'
-import {Registration} from './Registration'
+import {Registration} from './Registration/Registration'
 import {services} from '../../helpers/services'
-import {Login} from './Login'
-import {Header} from '../../components/Header'
+import {Login} from './Login/Login'
+import {Header} from '../../components/Header/Header'
 
 type FormValues = {
     email: string
